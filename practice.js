@@ -18,6 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
+function first (arr) {
+  return arr[0];
+}
 
 
 
@@ -33,7 +36,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last (arr) {
+  return arr[2]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,6 +53,14 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
+ function looper (family) {
+   for(let i = 0; i < family.length; i++) {
+     alert(family[i]) //why do we use [] around i????
+   }
+  //  console.log(family[0]) 
+ }
+
+ looper(family)
 
 
 
@@ -64,7 +77,18 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
+// function reversedLooper (letters) {
+//   for(let i = 5; i > letters.length; 1--) {
+//     alert(letters[i]);
+//   }
+// }
+// reversedLooper (letters);
 
+function reversedLooper (letters) {
+  for(let i = letters.length - 1; i >=0; i--)
+  alert(letters[i])
+}
+reversedLooper(letters)
 
 ////////// PROBLEM 5 //////////
 
@@ -79,9 +103,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
+// let evenNums = []
 
-
-
+// function evenFinder(nums){
+//   for(let i = 0; i < nums.length; i++){
+//     if ( nums[i] % 2 === 0) {
+//       evenNums.push(nums[i])
+//     }
+      
+//   }
+// }
+ 
 
 
 
@@ -108,6 +140,15 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
+let evensArry = [];
+let oddsArry = [];
+
+function divider (numbersArray) {
+  for(let i = 0; i < numbersArray.length; i++)
+    if ( numbersArray[i] / 2){
+
+    }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -256,9 +297,8 @@ var colt = {
 
 /*
   Above you're given an empty array and four variables containing objects. 
-  Fill the devMountainEmployees array with those four objects. Do this in either
-  the global scope or in a function. If done in a function, invoke it.
-  After that, console.log the length of the Array and make sure that it's equal to 4. 
+  Fill the devMountainEmployees array with those four objects. 
+  After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
 //Code Here
@@ -287,11 +327,9 @@ var colt = {
 
 
 /*
-  Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
+  Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
 
   Include the following user1 object as one of the objects in your array.
-  
-  MAKE SURE TO DO THIS IN THE SECTION BELOW WHERE USER1 IS DECLARED
 */
 
 // Do not edit the code below.
