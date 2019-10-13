@@ -53,14 +53,14 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
- function looper (family) {
-   for(let i = 0; i < family.length; i++) {
+function looper (family) {
+  for(let i = 0; i < family.length; i++) {
      alert(family[i]) //why do we use [] around i????
-   }
+  }
   //  console.log(family[0]) 
- }
+}
 
- looper(family)
+looper(family)
 
 
 
@@ -103,17 +103,19 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 
-// let evenNums = []
 
-// function evenFinder(nums){
-//   for(let i = 0; i < nums.length; i++){
-//     if ( nums[i] % 2 === 0) {
-//       evenNums.push(nums[i])
-//     }
-      
-//   }
-// }
- 
+
+function evenFinder(nums){
+  let evenNums = []
+  for(let i = 0; i < nums.length; i++){
+    if ( nums[i] % 2 === 0) {
+      evenNums.push(nums[i])
+    }
+    
+  }
+  return evenNums; 
+}
+
 
 
 
@@ -126,7 +128,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 
 
-////////// PROBLEM 6 //////////
+////////// PROBLEM 6 DONE//////////
 
 // Do not edit the code below.
 var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
@@ -140,37 +142,76 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
-let evensArry = [];
-let oddsArry = [];
+
 
 function divider (numbersArray) {
-  for(let i = 0; i < numbersArray.length; i++)
-    if ( numbersArray[i] / 2){
-
+  let evensArry = [];
+  let oddsArry = [];
+  for(let i = 0; i < numbersArray.length; i++) {
+    if ( numbersArray[i] % 2 != 1) {
+      evensArry.push(numbersArray[i])
+    }else{
+      oddsArry.push(numbersArray[i]);
     }
+  }
+  return [evensArry, oddsArry];
 }
+
+// let evensArry = [];
+// let oddsArry = [];
+
+// function divider (numbersArray) {
+//   for(let i = 0; i < numbersArray.length; i++) {
+//     if ( numbersArray[i] % 2 === 0) {
+//       evensArry.push(numbersArray[i])
+//     }else{
+//       for(let j = 0; j < numbersArray.length; i++){
+//         if ( numbersArray[i ])
+//       }
+//     }
+//   }
+// }
+
 
 
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
-var getRandomArbitrary = function() {
-  return Math.floor(Math.random() * 30);
-};
+
+
+// function getRandomArbitrary() {
+//   return Math.floor(Math.random() * 30);
+// };
+
 // Do not edit the code above.
 
 /* 
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
   Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
+
   Write a function named finder that will take in an array as an argument.
+
   In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
   Loop through the array to see if randomNumber is in the array. 
   If it is, return true, if it's not, return false
 */
+var getRandomArbitrary = function() {
+  return Math.floor(Math.random() * 30);
+};
 
 //Code Here
 
+//THIS SHOULD WORK********//
+function finder(array) {
+  var randomNumber = getRandomArbitrary();
+  for( i = 0; i < array.length; i++){
+    if (randomNumber === array[i]){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -198,7 +239,70 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+
+// function removeItem (myGroceryList, removeGroceryItem){
+//   let newGroceryList = myGroceryList;
+//   for( i = 0; i <= myGroceryList.length; i++ ) {
+//     console.log(myGroceryList)
+//     if ( removeGroceryItem === myGroceryList[i] ){
+//       newGroceryList.splice(i, 1)
+//       return newGroceryList;
+//     } else if( !myGroceryList || removeGroceryItem) {
+//       return newGroceryList = [];
+//     }
+//   }
+// }
+// removeItem(myGroceryList, removeGroceryItem)
+
+
+// function addItem (myGroceryList, addGroceryItem) {
+//   let newGroceryList = myGroceryList;
+//   if( !myGroceryList || !addGroceryItem) {
+//     return newGroceryList = [];
+//   }
+//   for ( i = 0; i <= myGroceryList.length; i++ ) {
+//     console.log(myGroceryList);
+//     if ( addGroceryItem != myGroceryList[i] ){
+//       newGroceryList.push(addGroceryItem);
+//       return newGroceryList;
+//     }
+//   }
+// }
+// addItem(myGroceryList, addGroceryItem)
+
+function removeItem (myGroceryList, removeGroceryItem){
+  let newGroceryList = myGroceryList;
+  
+  if( !myGroceryList || !removeGroceryItem) {
+      return newGroceryList = [];
+    }
+  for( i = 0; i <= myGroceryList.length; i++ ) {
+    // console.log(myGroceryList)
+    if ( removeGroceryItem === myGroceryList[i] ){
+      newGroceryList.splice(i, 1)
+      return newGroceryList
+    }
+  }
+  return myGroceryList;
+}
+removeItem(myGroceryList)
+
+console.log(myGroceryList);
+
+function addItem (myGroceryList, addGroceryItem) {
+  let newGroceryList = myGroceryList;
+  if( !myGroceryList || !addGroceryItem) {
+      return newGroceryList = [];
+    }
+  for ( i = 0; i <= myGroceryList.length; i++ ) {
+    // console.log(myGroceryList);
+    if ( addGroceryItem != myGroceryList[i] ){
+      newGroceryList.push(addGroceryItem);
+      return newGroceryList;
+    }
+  }
+}
+addItem(myGroceryList)
 
 
 
@@ -209,6 +313,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+
+function maker() {
+  let arrNums = [];
+  console.log(arrNums)
+  for ( let i = 1; i <= 215; i++ ) {
+    console.log(i)
+    arrNums.push(i);
+    }
+    console.log(arrNums)
+  return arrNums;
+  
+}
 
 
 
@@ -225,7 +341,17 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen( numbers ) {
+  let plusTenArr = [];
+  console.log(plusTenArr);
+  for ( let i = 0; i < numbers.length; i++){
+  plusTenArr[i] = Number(numbers[i]) + 10;
+  }
+  console.log(plusTenArr);
+  return plusTenArr;    
+}
 
+addTen(numbers);
 
 
 ////////// PROBLEM 11 //////////
@@ -251,8 +377,32 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+// function longer(arr1, arr2) {
+//   let longer = [];
+//   if ( arr1.length > arr2.length ) {
+//     longer = arr1;
+//   }if ( arr2.length > arr1.length ) {
+//     longer = arr2;
+//   } else if ( arr1 === arr2 ) {
+//     longer = arr1;
+//   }
+//   return longer;
+// }
+
+// longer(arr1, arr2);
 
 
+function longer(arr1, arr2) {
+  let longer = [];
+  if ( arr1.length > arr2.length ) {
+    longer = arr1;
+  }else {
+    longer = arr2;
+  }
+  return longer;
+}
+
+longer(arr1, arr2);
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -262,6 +412,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+
+function both(arr1, arr2){
+  let bothArr = [];
+  for ( let i = 0; i < arr1.length; i++ ){
+    if ( arr2.indexOf(arr1[i]) !== -1 ) {
+      bothArr.push(arr1[i])
+    }
+  }
+  return bothArr;
+}
+
 
 
 
@@ -304,6 +465,11 @@ var colt = {
 //Code Here
 
 
+devMountainEmployees.push(joe, cahlan, ryan, colt)
+
+
+console.log(devMountainEmployees)
+console.log(devMountainEmployees.length)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
@@ -311,7 +477,17 @@ var colt = {
 */
 
 //Code Here
+for ( let i = 0; i < devMountainEmployees.length; i++ ){
+  console.log(devMountainEmployees[i].name)
+  if ( devMountainEmployees[i].name === 'Cahlan' ) {
+    devMountainEmployees.splice(i,1)
+    console.log(devMountainEmployees)
+    console.log(devMountainEmployees.length)
+  }
 
+}
+console.log(devMountainEmployees)
+console.log(devMountainEmployees.length)
 
 
 ////////// PROBLEM 13 //////////
@@ -323,6 +499,8 @@ var colt = {
 */
 
 //Code Here
+
+
 
 
 
@@ -339,6 +517,12 @@ var user1 = {
     password: 'hunter2',
     username: 'ihazcode'
 };
+
+// let user = {
+//   name: "N Roundy",
+//   email: 'Nroundy@mail.com'
+// }
+
 // Do not edit the code above.
 
 //Code Here
